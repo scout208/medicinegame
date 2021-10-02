@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Organize the medicine for each day"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="46dp" />
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#C9FA5D"
+        android:gravity="center_vertical"
+        android:text="Wed"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="219dp"
+        tools:layout_editor_absoluteY="86dp"></TextView>
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#D482BF"
+        android:gravity="center_vertical"
+        android:text="Sat"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="399dp"
+        tools:layout_editor_absoluteY="86dp"></TextView>
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FFF757"
+        android:gravity="center_vertical"
+        android:text="Tue"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="86dp"></TextView>
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#BA9CD1"
+        android:gravity="center_vertical"
+        android:text="Fri"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="339dp"
+        tools:layout_editor_absoluteY="86dp"></TextView>
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FFA04E"
+        android:gravity="center_vertical"
+        android:text="Mon"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="86dp"></TextView>
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#5FC6DF"
+        android:gravity="center_vertical"
+        android:text="Thu"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="279dp"
+        tools:layout_editor_absoluteY="86dp"></TextView>
+
+    <TextView
+        android:id="@+id/view"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FC6A7D"
+        android:gravity="center_vertical"
+        android:text="Sun"
+        android:textAlignment="center"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="86dp"></TextView>
+
+    <view
+        android:layout_width="676dp"
+        android:layout_height="216dp"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="179dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:textSize="64sp"
+        tools:layout_editor_absoluteX="296dp"
+        tools:layout_editor_absoluteY="238dp"
+        android:id="@+id/start"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
