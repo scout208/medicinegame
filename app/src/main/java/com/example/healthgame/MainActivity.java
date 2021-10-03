@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 View.DragShadowBuilder myShadow = new View.DragShadowBuilder(v);
 
                 // Starts the drag
-                v.startDragAndDrop(dragData, myShadow, v, 0);
+                v.startDragAndDrop(dragData, myShadow, null, 0);
 
                 v.setVisibility(View.INVISIBLE);
                 return true;
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
         public boolean onDrag(View v, DragEvent event) {
             // Defines a variable to store the action type for the incoming event
             final int action = event.getAction();
-            View view = (View) event.getLocalState();
+            View view;
 
             // Handles each of the expected events
             switch(action) {
@@ -232,12 +232,54 @@ public class MainActivity extends AppCompatActivity {
 
                     // Displays a message containing the dragged data
                     //Toast.makeText(this, "Dragged data is " + dragData.toString(), Toast.LENGTH_LONG).show();
+                    String id = dragData.toString();
+                    int resID = getResources().getIdentifier(id, "id", getPackageName());
+                    Log.d("Dragging", "This is the id " + id + "(" + resID + ")");
 
+                    //if (view != null) {
+                    view = (View) findViewById(resID);
                     ViewGroup owner = (ViewGroup) view.getParent();
                     owner.removeView(view);
 
                     ViewGroup destination = (ViewGroup) v;
                     destination.addView(view);
+                    view.setVisibility(View.VISIBLE);
+                    //}
+
+                    // Count pills that are left and check the results.
+                    int pills = ((RelativeLayout) findViewById(R.id.pills)).getChildCount();
+                    Log.d("Info", pills + " pills");
+                    if (pills == 0)
+                    {
+                        Log.d("Info", "No more pills");
+
+                        // Check which pills are in each bin
+                        for (int i = 0; i < bins.length; i++) {
+                            ViewGroup bin = bins[i];
+                            int childCount = bin.getChildCount();
+                            if (childCount != 3) {
+                                Toast.makeText(MainActivity.this, "Some pill is placed wrong.", Toast.LENGTH_LONG).show();
+                                return true;
+                            } else {
+
+                                String item11 = bin.getChildAt(0).toString();
+                                Boolean isFirstPillPill1 = bin.getChildAt(1).toString().contains("pill1");
+                                Boolean isSecondPillPill1 = bin.getChildAt(2).toString().contains("pill1");
+
+                                if (isFirstPillPill1 && isSecondPillPill1) {
+                                    // Something is wrong
+                                    Toast.makeText(MainActivity.this, "Some pill is placed wrong.", Toast.LENGTH_LONG).show();
+                                    return true;
+                                }
+
+                                //break;
+                            }
+                        }
+
+                        // Success!!!
+                        Toast.makeText(MainActivity.this, "You did it!", Toast.LENGTH_LONG).show();
+                        Log.d("Info", "Showed toast");
+                    }
 
                     // Invalidates the view to force a redraw
                     //v.invalidate();
@@ -246,43 +288,8 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case DragEvent.ACTION_DRAG_ENDED:
 
-                    if (v.getId() == R.id.pills) {
-                        // All pills are gone. Check the results.
-                        int pills =((ViewGroup) v).getChildCount();
-                        Log.d("Info", pills + " pills");
-                        if (pills == 0)
-                        {
-                           Log.d("Info", "No more pills");
-
-                            // Check which pills are in each bin
-                            for (int i = 0; i < bins.length; i++) {
-                                ViewGroup bin = bins[i];
-                                int childCount = bin.getChildCount();
-                                if (childCount == 3) {
-                                    String item11 = sun.getChildAt(0).toString();
-                                    Boolean isFirstPillPill1 = sun.getChildAt(1).toString().contains("pill1");
-                                    Boolean isSecondPillPill1 = sun.getChildAt(2).toString().contains("pill1");
-
-                                    if (isFirstPillPill1 && isSecondPillPill1) {
-                                        // Something is wrong
-                                        Toast.makeText(MainActivity.this, "Some pill is placed wrong.", Toast.LENGTH_LONG).show();
-                                        return true;
-                                    }
-
-                                    //break;
-                                }
-                            }
-
-                            // Success!!!
-                            Toast.makeText(MainActivity.this, "You did it!", Toast.LENGTH_LONG).show();
-                            Log.d("Info", "Showed toast");
-                        }
-                    }
-
                     // Invalidates the view to force a redraw
                     v.invalidate();
-
-                    view.setVisibility(View.VISIBLE);
 
                     if (event.getResult()) {
                         //Toast.makeText(this, "The drop was handled.", Toast.LENGTH_LONG).show();
