@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,102 +7,261 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Organize the medicine for each day"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="46dp" />
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:textSize="18dp"
+        android:layout_marginLeft="30dp"
+        android:layout_alignParentTop="true"/>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FC6A7D"
+            android:gravity="center"
+            android:text="Sun" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/sun"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FFA04E"
+            android:text="Mon"
+            android:gravity="center" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/mon"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#FFF757"
+            android:gravity="center"
+            android:text="Tue" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tue"
+        android:layout_marginTop="50dp">
     <TextView
-        android:id="@+id/view"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="#C9FA5D"
-        android:gravity="center_vertical"
-        android:text="Wed"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="219dp"
-        tools:layout_editor_absoluteY="86dp"></TextView>
+        android:gravity="center"
+        android:text="Wed" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/view"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#D482BF"
-        android:gravity="center_vertical"
-        android:text="Sat"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="399dp"
-        tools:layout_editor_absoluteY="86dp"></TextView>
-
-    <TextView
-        android:id="@+id/view"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FFF757"
-        android:gravity="center_vertical"
-        android:text="Tue"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="86dp"></TextView>
-
-    <TextView
-        android:id="@+id/view"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#BA9CD1"
-        android:gravity="center_vertical"
-        android:text="Fri"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="339dp"
-        tools:layout_editor_absoluteY="86dp"></TextView>
-
-    <TextView
-        android:id="@+id/view"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FFA04E"
-        android:gravity="center_vertical"
-        android:text="Mon"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="86dp"></TextView>
-
-    <TextView
-        android:id="@+id/view"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#5FC6DF"
-        android:gravity="center_vertical"
-        android:text="Thu"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="279dp"
-        tools:layout_editor_absoluteY="86dp"></TextView>
-
-    <TextView
-        android:id="@+id/view"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="#FC6A7D"
-        android:gravity="center_vertical"
-        android:text="Sun"
-        android:textAlignment="center"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="86dp"></TextView>
-
-    <view
-        android:layout_width="676dp"
-        android:layout_height="216dp"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="179dp" />
-
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
-        android:textSize="64sp"
-        tools:layout_editor_absoluteX="296dp"
-        tools:layout_editor_absoluteY="238dp"
-        android:id="@+id/start"/>
+        android:id="@+id/thu"
+        android:layout_toRightOf="@id/wed"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#5FC6DF"
+            android:text="Thu"
+            android:gravity="center" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fri"
+        android:layout_toRightOf="@+id/thu"
+        android:layout_marginTop="50dp">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#BA9CD1"
+            android:text="Fri"
+            android:gravity="center" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_toRightOf="@+id/fri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:id="@+id/sat">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#D482BF"
+            android:gravity="center"
+            android:text="Sat" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/pills"
+        android:layout_width="676dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/sun"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/pill1.0"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="126dp"
+            android:layout_marginLeft="603dp"
+            app:srcCompat="@drawable/pill1"
+            android:tag="pill1.0" />
+        <ImageView
+            android:id="@+id/pill2.0"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="147dp"
+            android:layout_marginLeft="386dp"
+            app:srcCompat="@drawable/pill2"
+            android:tag="pill2.0"/>
+
+
+        <ImageView
+            android:id="@+id/pill1.1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginLeft="103dp"
+            app:srcCompat="@drawable/pill1"
+            android:tag="pill1.1"/>
+        <ImageView
+            android:id="@+id/pill2.1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="134dp"
+            android:layout_marginLeft="554dp"
+            app:srcCompat="@drawable/pill2"
+            android:tag="pill2.1"/>
+
+
+        <ImageView
+            android:id="@+id/pill1.2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="342dp"
+            app:srcCompat="@drawable/pill1"
+            android:tag="pill1.2"/>
+        <ImageView
+            android:id="@+id/pill2.2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="105dp"
+            android:layout_marginLeft="128dp"
+            app:srcCompat="@drawable/pill2"
+            android:tag="pill2.2"/>
+
+
+        <ImageView
+            android:id="@+id/pill1.3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="211dp"
+            android:layout_marginLeft="579dp"
+            app:srcCompat="@drawable/pill1"
+            android:tag="pill1.3"/>
+        <ImageView
+            android:id="@+id/pill2.3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="57dp"
+            android:layout_marginLeft="226dp"
+            app:srcCompat="@drawable/pill2"
+            android:tag="pill2.3"/>
+
+
+        <ImageView
+            android:id="@+id/pill1.4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="175dp"
+            android:layout_marginLeft="408dp"
+            app:srcCompat="@drawable/pill1"
+            android:tag="pill1.4"/>
+        <ImageView
+            android:id="@+id/pill2.4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="189dp"
+            android:layout_marginLeft="330dp"
+            app:srcCompat="@drawable/pill2"
+            android:tag="pill2.4"/>
+
+
+        <ImageView
+            android:id="@+id/pill1.5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginLeft="212dp"
+            app:srcCompat="@drawable/pill1"
+            android:tag="pill1.5"/>
+        <ImageView
+            android:id="@+id/pill2.5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="123dp"
+            android:layout_marginLeft="524dp"
+            app:srcCompat="@drawable/pill2"
+            android:tag="pill2.5"/>
+
+
+        <ImageView
+            android:id="@+id/pill1.6"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="165dp"
+            android:layout_marginLeft="521dp"
+            app:srcCompat="@drawable/pill1"
+            android:tag="pill1.6"/>
+        <ImageView
+            android:id="@+id/pill2.6"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginLeft="624dp"
+            app:srcCompat="@drawable/pill2"
+            android:tag="pill2.6"/>
+
+    </RelativeLayout>
+
+
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Start"-->
+<!--        android:textSize="64sp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:id="@+id/start"/>-->
+
+
+
+</RelativeLayout>
